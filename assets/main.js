@@ -1,4 +1,4 @@
-const keyTastedive = 'k=328834-ArtistFi-A1N9U9RR&type=music'
+const keyTastedive = '&k=328834-ArtistFi-A1N9U9RR'
 const keyBIT = '?app_id=codingbootcamp'
 const eventsBIT = '/events'
 
@@ -7,10 +7,12 @@ bandsInTownPull('Wet Nurse')
 
 function tastedivePull(artist){
 
-    var queryURL = "https://tastedive.com/api/similar?" + keyTastedive + '&q=' + artist
+    var queryURL = "https://tastedive.com/api/similar?" + 'q=' + artist + keyTastedive
+    
     $.ajax({
         url: queryURL,
-        method: "GET"
+        method: "GET",
+        dataType: "jsonp"
     }).then(function(response) {
         console.log(response)
     });
