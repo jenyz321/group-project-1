@@ -7,7 +7,7 @@ bandsInTownPull('Wet Nurse')
 
 function tastedivePull(artist){
 
-    var queryURL = "https://tastedive.com/api/similar?callback=?" + keyTastedive + '&q=' + artist
+    var queryURL = "https://tastedive.com/api/similar?" + keyTastedive + '&q=' + artist
     $.ajax({
         url: queryURL,
         method: "GET"
