@@ -10,30 +10,30 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/styles.css" />
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Navbar</a>
+    <nav class="navbar">
+        <a class="navbar-brand">bandSearch</a>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
+    <div class="box">
     <div class="welcome">
         <h2>All The World's A Stage</h2>
         <p>Looking for new music? How about live shows in our area?<br>
         Fill out the for below and let us do the work</p>
-    </div>
     <form class="pure-form pure-form-stacked">
         <fieldset>    
-            <label for="artist">Artist</label>
+            <label for="artist"></label>
             <input id="artist" type="text" placeholder="Artist">
-            <button type="submit" class="pure-button pure-button-primary">GET STARTED</button>
-            <label for="zipcode">Zipcode</label>
+            <button type="submit" class="pure-button pure-button-primary" id="button">GET STARTED</button>
+            <label for="zipcode"></label>
             <input id="zipcode" type="text" pattern="[0-9]*" placeholder="zipcode">
-                        
-    
-            <button type="submit" class="pure-button pure-button-primary">FIND AN EVENT</button>
+            <button type="submit" class="pure-button pure-button-primary" id="button">FIND AN EVENT</button>
         </fieldset>
     </form>
+</div>
+</div>
 </body>
 
 <script
