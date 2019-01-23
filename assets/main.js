@@ -14,7 +14,10 @@ function tastedivePull(artist){
         method: "GET",
         dataType: "jsonp"
     }).then(function(response) {
-        console.log(response)
+        response = response.Similar.Results
+        response.forEach(function(e){
+            bandsInTownPull(e.Name)
+        })
     });
 }
 
