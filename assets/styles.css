@@ -1,0 +1,39 @@
+body {
+    background-image: url(../assets/images/underoath-bgd.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.welcome {
+    color: #ffffff;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+    text-align: center
+}
+
+#button {
+    margin: 5px;
+    color: #ffffff;
+    background-color: #522B83;
+    border-radius: 20px;
+    box-shadow: 2px 2px #2E0D57;
+}
+
+.navbar {
+    color: #ffffff;
+    background-color: #2E0D57;
+}
+
+#artist {
+    margin: 10px auto;
+    text-align: center;
+}
+
+#zipcode {
+    margin: 10px auto;
+    text-align: center;
+}
