@@ -36,7 +36,7 @@ function bandsInTownPull(artist){
         console.log(response)
         if(response.length == 0)
             $('#output').prepend(
-                `<div class="col-sm-4">
+                `<div class="col-sm-3">
                     <div class="card">
                     <img class="card-img-top" src="https://placekitten.com/300/300">
                     <h5 class="card-title">${artist}</h5>
@@ -45,7 +45,7 @@ function bandsInTownPull(artist){
                 </div>`)
         else
             $('#output').prepend(
-                `<div class="col-sm-4">
+                `<div class="col-sm-3">
                     <div class="card">
                     <img class="card-img-top" src="https://placekitten.com/300/300">
                     <h5 class="card-title">${artist}</h5>
