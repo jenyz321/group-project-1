@@ -35,8 +35,22 @@ function bandsInTownPull(artist){
     }).then(function(response) {
         console.log(response)
         if(response.length == 0)
-            console.log(`${artist}: No events`)
+            $('#output').append(
+                `<div class="col-sm-4">
+                    <div class="card">
+                    <img class="card-img-top" src="https://placekitten.com/300/300">
+                    <h5 class="card-title">${artist}</h5>
+                    <p class="card-text">No events</p>
+                    </div>
+                </div>`)
         else
-            console.log(`${artist}: ${response.length} Events`)
+            $('#output').append(
+                `<div class="col-sm-4">
+                    <div class="card">
+                    <img class="card-img-top" src="https://placekitten.com/300/300">
+                    <h5 class="card-title">${artist}</h5>
+                    <p class="card-text">${response.length} Events</p>
+                    </div>
+                </div>`)
     });
 }
