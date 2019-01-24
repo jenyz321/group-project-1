@@ -1,9 +1,13 @@
-const keyTastedive = '&k=328834-ArtistFi-A1N9U9RR'
+const keyTastedive = '&k=328834-ArtistFi-A1N9U9RR&type=music'
 const keyBIT = '?app_id=codingbootcamp'
 const eventsBIT = '/events'
 
-tastedivePull('Pulp')
-bandsInTownPull('Wet Nurse')
+
+$('#submit-button').on('click', function(){
+    event.preventDefault()
+    tastedivePull($('#artist').val().trim())
+    console.log($('#artist').val().trim())
+})
 
 function tastedivePull(artist){
 
@@ -30,5 +34,9 @@ function bandsInTownPull(artist){
         method: "GET"
     }).then(function(response) {
         console.log(response)
+        if(response.length == 0)
+            console.log(`${artist}: No events`)
+        else
+            console.log(`${artist}: ${response.length} Events`)
     });
 }
