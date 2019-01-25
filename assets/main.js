@@ -2,9 +2,10 @@ const keyTastedive = '&k=328834-ArtistFi-A1N9U9RR&type=music'
 const keyBIT = '?app_id=codingbootcamp'
 const eventsBIT = '/events'
 
-
 $('#submit-button').on('click', function(){
     event.preventDefault()
+    $('#output').empty()
+    $('#artist-name-output').text($('#artist').val().trim())
     tastedivePull($('#artist').val().trim())
     console.log($('#artist').val().trim())
 })
@@ -53,7 +54,7 @@ function bandsInTownPull(artist){
                 `<div class="col-sm-3">
                     <div class="card">
                     <img class="card-img-top" src="${artistInfo.image_url}">
-                    <h5 class="card-title">${artist}</h5>
+                    <a href="${artistInfo.facebook_page_url}"><h5 class="card-title">${artist}</h5></a>
                     <p class="card-text">No events</p>
                     </div>
                 </div>`)
@@ -62,7 +63,7 @@ function bandsInTownPull(artist){
                 `<div class="col-sm-3">
                     <div class="card">
                     <img class="card-img-top" src="${artistInfo.image_url}">
-                    <h5 class="card-title">${artist}</h5>
+                    <a href="${artistInfo.facebook_page_url}"><h5 class="card-title">${artist}</h5></a>
                     <p class="card-text">${eventsInfo.length} Events</p>
                     <button class="btn btn-outline-light my-2 my-sm-0" id="ticket-button" type="submit"><a href="${eventsInfo[0].offers[0].url}">Tickets</a></button>
                     </div>
