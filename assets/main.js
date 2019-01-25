@@ -34,11 +34,25 @@ function bandsInTownPull(artist){
         method: "GET"
     }).then(function(response) {
         console.log(response)
-        if(response.length == 0)
+        
+        let eventsInfo = response
+
+        queryURL = "https://rest.bandsintown.com/artists/" + artist + keyBIT
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+
+        console.log(response)
+
+        let artistInfo = response
+
+        if(eventsInfo.length == 0)
             $('#output').prepend(
                 `<div class="col-sm-3">
                     <div class="card">
-                    <img class="card-img-top" src="https://placekitten.com/300/300">
+                    <img class="card-img-top" src="${artistInfo.image_url}">
                     <h5 class="card-title">${artist}</h5>
                     <p class="card-text">No events</p>
                     </div>
@@ -47,12 +61,13 @@ function bandsInTownPull(artist){
             $('#output').prepend(
                 `<div class="col-sm-3">
                     <div class="card">
-                    <img class="card-img-top" src="https://placekitten.com/300/300">
+                    <img class="card-img-top" src="${artistInfo.image_url}">
                     <h5 class="card-title">${artist}</h5>
-                    <p class="card-text">${response.length} Events</p>
-                    <button class="btn btn-outline-light my-2 my-sm-0" id="ticket-button" type="submit">Tickets</button>
+                    <p class="card-text">${eventsInfo.length} Events</p>
+                    <button class="btn btn-outline-light my-2 my-sm-0" id="ticket-button" type="submit"><a href="${eventsInfo[0].offers[0].url}">Tickets</a></button>
                     </div>
                 </div>`)
+        });
     });
 }
 
