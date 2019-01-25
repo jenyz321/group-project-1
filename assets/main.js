@@ -55,3 +55,4 @@ function bandsInTownPull(artist){
                 </div>`)
     });
 }
+
