@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #F1E7FC;
 }
 
 .jumbotron {
@@ -29,12 +30,29 @@ body {
     box-shadow: 2px 2px #2E0D57;
 }
 
+#submit-button:hover {
+    margin: 5px;
+    color: #ffffff;
+    font-weight: lighter;
+    background-color: orange;
+    border-radius: 20px;
+    box-shadow: 2px 2px #2E0D57;
+}
+
 #ticket-button {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
     width: 100px;
     align-self: center;
     color: #ffffff;
     background-color: #522B83;
+    border-radius: 20px;
+}
+
+#ticket-button:hover {
+    margin-bottom: 10px !important;
+    width: 100px;
+    align-self: center;
+    background-color: orange;
     border-radius: 20px;
 }
 
@@ -78,3 +96,8 @@ h3 {
     margin-top: 10px;
     margin-bottom: 10px; 
 }
+
+a {
+    color: white !important;
+    text-decoration: none !important; /* no underline */
+  }
