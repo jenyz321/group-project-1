@@ -1,4 +1,8 @@
 body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
     background-image: url(../assets/images/underoath-bgd.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -8,19 +12,29 @@ body {
 
 .welcome {
     color: #ffffff;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     max-width: 500px;
     text-align: center
 }
 
-#button {
+#submit-button {
     margin: 5px;
     color: #ffffff;
+    font-weight: lighter;
     background-color: #522B83;
     border-radius: 20px;
     box-shadow: 2px 2px #2E0D57;
+}
+
+#ticket-button {
+    margin-bottom: 10px;
+    width: 100px;
+    align-self: center;
+    color: #ffffff;
+    background-color: #522B83;
+    border-radius: 20px;
 }
 
 .navbar {
@@ -31,9 +45,29 @@ body {
 #artist {
     margin: 10px auto;
     text-align: center;
+    color: gray;
 }
 
 #zipcode {
     margin: 10px auto;
     text-align: center;
+    color: gray;
+
+}
+
+.card {
+    margin: 10px;
+}
+
+.card-title {
+    padding: 5px;
+    text-align: center;
+    color: #2E0D57;
+    font-weight: bold;
+}
+
+.card-text {
+    padding: 5px;
+    text-align: center;
+    color: gray;
 }
