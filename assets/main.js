@@ -50,7 +50,9 @@ function bandsInTownPull(artist){
                     <img class="card-img-top" src="https://placekitten.com/300/300">
                     <h5 class="card-title">${artist}</h5>
                     <p class="card-text">${response.length} Events</p>
+                    <button class="btn btn-outline-light my-2 my-sm-0" id="ticket-button" type="submit">Tickets</button>
                     </div>
                 </div>`)
     });
 }
+
