@@ -51,6 +51,7 @@ body {
 .ticket-button:hover {
     margin-bottom: 10px !important;
     align-self: center;
+    color:#fff;
     background-color: orange;
     border-radius: 20px;
 }
