@@ -3,11 +3,25 @@ const keyBIT = '?app_id=codingbootcamp'
 const eventsBIT = '/events'
 
 $('#submit-button').on('click', function(){
+    var nameReg = /^[A-Za-z1-9 ]+$/;
     event.preventDefault()
     $('#output').empty()
-    $('#artist-name-output').text($('#artist').val().trim())
-    tastedivePull($('#artist').val().trim())
-    console.log($('#artist').val().trim())
+
+    let input = $('#artist').val().trim()
+
+    if(input == ''){
+        $('#artist-name-output').text(`Please enter an artist.`)
+    }
+    
+    else if((nameReg).test(input)){
+        console.log('success')
+        $('#artist-name-output').text(`bandSearch similar results for ${input}`)
+        tastedivePull(input)
+    }
+
+    else{
+        $('#artist-name-output').text(`Band names may not include special characters.`)
+    }
 })
 
 function tastedivePull(artist){
