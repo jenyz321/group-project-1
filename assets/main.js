@@ -100,11 +100,11 @@ function bandsInTownPull(artist){
                 console.log(clicked)
                 if($(`#list-${clicked}`).hasClass('hide')){
                     $(`#list-${clicked}`).removeClass('hide')
-                    $(`#ticket-${count}`).text('Close Events')
+                    $(`#ticket-${clicked}`).text('Close Events')
                 }
                 else{
                     $(`#list-${clicked}`).addClass('hide')
-                    $(`#ticket-${count}`).text('See Events')
+                    $(`#ticket-${clicked}`).text('See Events')
                 }
             })
             }
