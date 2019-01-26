@@ -55,6 +55,7 @@ function bandsInTownPull(artist){
 
         let eventList = ``
 
+        if(eventsInfo.length!=0)
         for(let i=0; i<10; i++){
             eventList += `<li class="list-group-item dark"><a href="${eventsInfo[i].offers[0].url}">${eventsInfo[i].venue.name} in ${eventsInfo[i].venue.city}, ${eventsInfo[i].venue.region} on ${eventsInfo[i].datetime}</a></li>`
         }
