@@ -1,9 +1,10 @@
 const keyTastedive = '&k=328834-ArtistFi-A1N9U9RR&type=music'
 const keyBIT = '?app_id=codingbootcamp'
 const eventsBIT = '/events'
+let count = 0
 
 $('#submit-button').on('click', function(){
-    var nameReg = /^[A-Za-z1-9 ]+$/;
+    var reg = /^[A-Za-z1-9 ]+$/;
     event.preventDefault()
     $('#output').empty()
 
@@ -13,8 +14,7 @@ $('#submit-button').on('click', function(){
         $('#artist-name-output').text(`Please enter an artist.`)
     }
     
-    else if((nameReg).test(input)){
-        console.log('success')
+    else if((reg).test(input)){
         $('#artist-name-output').text(`bandSearch similar results for ${input}`)
         tastedivePull(input)
     }
@@ -48,9 +48,17 @@ function bandsInTownPull(artist){
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+        
         console.log(response)
         
         let eventsInfo = response
+
+        let eventList = ``
+        eventsInfo.forEach(function(e){
+            eventList += `<li class="list-group-item dark"><a href="${e.offers[0].url}">${e.venue.name} in ${e.venue.city}, ${e.venue.region} on ${e.datetime}</a></li>`
+        })
+
+        console.log(eventList);
 
         queryURL = "https://rest.bandsintown.com/artists/" + artist + keyBIT
 
@@ -63,7 +71,7 @@ function bandsInTownPull(artist){
 
         let artistInfo = response
 
-        if(eventsInfo.length == 0)
+        if(eventList == ''){
             $('#output').prepend(
                 `<div class="col-sm-3">
                     <div class="card">
@@ -72,16 +80,34 @@ function bandsInTownPull(artist){
                     <p class="card-text">No events</p>
                     </div>
                 </div>`)
-        else
+            }
+        else{
+            count++
             $('#output').prepend(
                 `<div class="col-sm-3">
                     <div class="card">
                     <img class="card-img-top" src="${artistInfo.image_url}">
                     <a href="${artistInfo.facebook_page_url}"><h5 class="card-title">${artist}</h5></a>
                     <p class="card-text">${eventsInfo.length} Events</p>
-                    <button class="btn btn-outline-light my-2 my-sm-0" id="ticket-button" type="submit"><a href="${eventsInfo[0].offers[0].url}">Tickets</a></button>
+                    <ul class="list-group hide" id="list-${count}">${eventList}</ul>
+                    <button id="ticket-${count}" class="ticket-button btn btn-outline-light my-2 my-sm-0" data-event=${count} type="submit">See Events</button>
                     </div>
                 </div>`)
+
+            $(`#ticket-${count}`).on('click', function(event){
+                event.preventDefault()
+                let clicked = $(this).data('event')
+                console.log(clicked)
+                if($(`#list-${clicked}`).hasClass('hide')){
+                    $(`#list-${clicked}`).removeClass('hide')
+                    $(`#ticket-${count}`).text('Close Events')
+                }
+                else{
+                    $(`#list-${clicked}`).addClass('hide')
+                    $(`#ticket-${count}`).text('See Events')
+                }
+            })
+            }
         });
     });
 }

@@ -21,6 +21,7 @@ body {
     text-align: center
 }
 
+
 #submit-button {
     margin: 5px;
     color: #ffffff;
@@ -39,18 +40,16 @@ body {
     box-shadow: 2px 2px #2E0D57;
 }
 
-#ticket-button {
+.ticket-button {
     margin-bottom: 10px !important;
-    width: 100px;
     align-self: center;
     color: #ffffff;
     background-color: #522B83;
     border-radius: 20px;
 }
 
-#ticket-button:hover {
+.ticket-button:hover {
     margin-bottom: 10px !important;
-    width: 100px;
     align-self: center;
     background-color: orange;
     border-radius: 20px;
@@ -97,7 +96,15 @@ h3 {
     margin-bottom: 10px; 
 }
 
-a {
+.tickets-btn {
     color: white !important;
     text-decoration: none !important; /* no underline */
   }
+
+.list-group-item{ 
+    color: #444!important; 
+} 
+
+.hide{
+    display: none;
+}
